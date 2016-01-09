@@ -1,0 +1,40 @@
+# ReadFromTXTandADD
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ReadFromTXTandADD
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int suma = 0;
+            string[] lines = System.IO.File.ReadAllLines(@"C:\Users\zigis\Desktop\C#\ReadFromTXTandADD\Text.txt");
+            for (int i = 0; i<2; i++) //межі циклу виразити через індекс останнього елементу в блокноті
+            {
+                int Iline = Int32.Parse(lines[i]);
+                Console.WriteLine("Число "+ i + " в блокнотi " + Iline);
+                suma = suma + Iline;
+                Console.WriteLine("Сума в " + i + " рядку " + suma);
+                Console.WriteLine("____________________________________");
+
+            }
+
+            Console.ReadKey();
+
+
+
+            /*foreach (string line in lines)
+            {
+                int Iline = Int32.Parse(line);
+                Console.WriteLine(Iline);
+                sum = sum + Iline;
+
+            }*/
+
+        }
+    }
+}
