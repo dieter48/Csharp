@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace SUMAvid1doN
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string TXT = System.IO.File.ReadAllText(@"C:\Users\zigis\Desktop\C#\SUMAvid1doN\TXT.txt");
+            int N = Int32.Parse(TXT);
+            int suma = 0;
+            for (int i = 0; i < N; i++)
+            {
+                suma = suma + i;
+                Console.WriteLine(suma);
+            }
+
+            Console.ReadKey();
+        }
+    }
+}
