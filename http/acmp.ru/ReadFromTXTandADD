@@ -11,7 +11,7 @@ namespace ReadFromTXTandADD
         {
             int suma = 0;
             string[] lines = System.IO.File.ReadAllLines(@"C:\Users\zigis\Desktop\C#\ReadFromTXTandADD\Text.txt");
-            for (int i = 0; i<2; i++) //межі циклу виразити через індекс останнього елементу в блокноті
+            for (int i = 0; i<lines.Length; i++) //межі циклу виразити через індекс останнього елементу в блокноті - done
             {
                 int Iline = Int32.Parse(lines[i]);
                 Console.WriteLine("Число "+ i + " в блокнотi " + Iline);
