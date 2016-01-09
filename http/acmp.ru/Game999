@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Game999
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string N = System.IO.File.ReadAllText(@"C:\Users\zigis\Desktop\C#\Game999\TXT.txt");
+            int Number = Int32.Parse(N);
+            int Digit3 = 9 - Number;
+            Console.WriteLine(Number + "9" + Digit3);
+            System.IO.File.WriteAllText(@"C:\Users\zigis\Desktop\C#\Game999\TXT2.txt", Number + "9" + Digit3);
+            Console.ReadKey();
+        }
+    }
+}
