@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace _5na5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string N = System.IO.File.ReadAllText(@"C:\Users\zigis\Desktop\C#\5na5\TXT.txt");
+            char[] array = N.ToCharArray(0, N.Length-1);
+            string Bez5 = null;
+            for (int i = 0; i < array.Length; i++)
+            {
+                Bez5 = Bez5 + array[i].ToString();
+            }
+            
+            int StepinBez25 = Int32.Parse(Bez5) * (Int32.Parse(Bez5)+1);
+
+            string result = StepinBez25.ToString() + "25";
+
+            Console.WriteLine(result);
+            Console.ReadLine();
+        }
+    }
+
+}
