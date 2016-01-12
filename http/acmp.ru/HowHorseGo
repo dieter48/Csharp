@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace HowHorseGo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string hid = System.IO.File.ReadAllText(@"C:\Users\zigis\Desktop\C#\HowHorseGo\TXT.txt");
+            if (hid.Length == 5)
+            {
+                char[] hidChar = hid.ToCharArray();
+                int r/*iznucya*/ = hidChar[1] - hidChar[4];
+                int r2/*iznucya*/ = hidChar[0] - hidChar[3];
+
+                switch (Math.Abs(r))
+                {
+                    case 1:
+                        if (Math.Abs(r2) == 2)
+                        {
+                            Console.WriteLine("Yes");
+                        }
+                        else
+                        {
+                            Console.WriteLine("No");
+                        }
+                        break;
+                    case 2:
+                        if (Math.Abs(r2) == 1)
+                        {
+                            Console.WriteLine("Yes");
+                        }
+                        else
+                        {
+                            Console.WriteLine("No");
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("impossible");
+                        break;
+                }
+            }
+            else
+                Console.WriteLine("impossible");
+            Console.ReadKey();
+        }
+    }
+}
