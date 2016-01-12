@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace AbbaGold
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] IGold = { 0, 0, 0 };
+            string[] Gold = System.IO.File.ReadAllLines(@"C:\Users\zigis\Desktop\C#\AbbaGold\TXT.txt");
+            for (int i = 0; i < Gold.Length; i++)
+            {       
+                IGold[i] = Int32.Parse(Gold[i]);
+            }
+            Console.WriteLine(IGold.Max());
+            Console.ReadKey();
+        }
+    }
+}
