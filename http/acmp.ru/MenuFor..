@@ -1,0 +1,65 @@
+/*
+ * Created by SharpDevelop.
+ * User: zigi
+ * Date: 2/7/2016
+ * Time: 10:21 PM
+ * 
+ * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ */
+using System;
+
+using System.Collections.Generic;
+
+namespace Test1
+{
+	class Program
+	{
+		public static void Main()
+		{
+			Console.BackgroundColor = ConsoleColor.Blue;
+			Console.ForegroundColor = ConsoleColor.Magenta;
+			
+			//List<string> list = new List<string>();
+			Menu menu = new Menu();
+			menu.MenuText();
+			
+			
+			
+			Console.ReadKey();
+		}
+		
+		
+		public class Menu
+		{
+			public void MenuText()
+			{
+				Z1:
+				int IntMenuOption;
+				Console.WriteLine("Option 1" + "\nOption 2" + "\nExit 3");
+				string StringMenuOption = Console.ReadLine();
+				
+				bool res = int.TryParse(StringMenuOption, out IntMenuOption);
+				if (res == true) {
+					switch (IntMenuOption) {
+						case 1:
+							Console.WriteLine("\nOption 1");
+							break;
+						case 2:
+							Console.WriteLine("\nOption 2");
+							break;
+						case 3:
+							break;
+						default:
+							Console.WriteLine("Please enter digit from the list");
+							goto Z1;
+					}
+				} else {
+					Console.WriteLine("Please enter digit from the list\n");
+					goto Z1;
+				}
+			}
+			
+		}
+		
+	}
+}
