@@ -33,13 +33,14 @@ namespace Test1
 		{
 			public void MenuText()
 			{
-				Z1:
+				Z1://без міток
 				int IntMenuOption;
-				Console.WriteLine("Option 1" + "\nOption 2" + "\nExit 3");
+				Console.WriteLine("Option 1 \nOption 2 \nExit 3");
 				string StringMenuOption = Console.ReadLine();
 				
 				bool res = int.TryParse(StringMenuOption, out IntMenuOption);
-				if (res == true) {
+				if (res == true) 
+				{
 					switch (IntMenuOption) {
 						case 1:
 							Console.WriteLine("\nOption 1");
@@ -51,11 +52,13 @@ namespace Test1
 							break;
 						default:
 							Console.WriteLine("Please enter digit from the list");
-							goto Z1;
+							goto Z1;//без міток
 					}
-				} else {
+				} 
+				else 
+				{
 					Console.WriteLine("Please enter digit from the list\n");
-					goto Z1;
+					goto Z1; //без міток
 				}
 			}
 			
