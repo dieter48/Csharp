@@ -1,0 +1,108 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Collections;
+
+namespace SSTestApp
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Petshop MyPetshop = new Petshop();
+
+            Dog dog0 = new Dog("Jack", "Chihuahua", "dog");
+            Dog dog1 = new Dog("Jackill", "Chia", "dog");
+
+            Cat cat0 = new Cat("Sirko","Rudy","cat");
+
+            MyPetshop.AddPet(dog0);
+            MyPetshop.AddPet(dog1);
+            MyPetshop.AddPet(cat0);
+
+            MyPetshop.ShowAllPets();
+            
+            Console.ReadKey(true);
+        }
+    }
+    class Pet //: InterfaceForAll 
+    //We can do this test App without Interface
+    {
+        private string _name;
+        private string _breed;
+        private string _animalType;
+
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; }
+        }
+        public string Breed
+        {
+            get { return _breed; }
+            set { _breed = value; }
+        }
+        public string AnimalType
+        {
+            get { return _animalType; }
+            set { _animalType = value; }
+        }
+
+        public void Introduce(string name, string breed, string animalType)
+        {
+            Console.WriteLine("I’m {0} of {1}. I’m a {2}",name, breed, animalType);
+        }
+    }
+    class Dog : Pet
+    {
+        public Dog(string name, string breed, string animalType)
+        {
+            Name = name;
+            Breed = breed;
+            AnimalType = animalType;
+        }
+        public Dog()
+        {
+            Name = "";
+            Breed = "";
+            AnimalType = "";
+        }
+    }
+    class Cat : Pet
+    {
+        public Cat(string name, string breed, string animalType)
+        {
+            Name = name;
+            Breed = breed;
+            AnimalType = animalType;
+        }
+        public Cat()
+        {
+            Name = "";
+            Breed = "";
+            AnimalType = "";
+        }
+    }
+    class Petshop
+    {
+        List<Pet> _petshop = new List<Pet>();
+
+        public void AddPet(Pet somePet)
+        {
+            _petshop.Add(somePet);
+        }
+
+        public void ShowAllPets()
+        {
+            for (int i = 0; i < _petshop.Count; i++)
+            {
+                Console.WriteLine(_petshop[i].Name);
+                Console.WriteLine(_petshop[i].Breed);
+                Console.WriteLine(_petshop[i].AnimalType + "\n");
+            }
+        }
+    }
+}
+
