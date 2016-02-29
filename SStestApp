@@ -22,7 +22,7 @@ namespace SSTestApp
             MyPetshop.AddPet(dog1);
             MyPetshop.AddPet(cat0);
 
-            MyPetshop.ShowAllPets();
+            MyPetshop.IntroduceAll();
             
             Console.ReadKey(true);
         }
@@ -94,7 +94,7 @@ namespace SSTestApp
             _petshop.Add(somePet);
         }
 
-        public void ShowAllPets()
+        public void IntroduceAll()
         {
             for (int i = 0; i < _petshop.Count; i++)
             {
