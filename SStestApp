@@ -87,7 +87,7 @@ namespace SSTestApp
     }
     class Petshop
     {
-        List<Pet> _petshop = new List<Pet>();
+        private List<Pet> _petshop = new List<Pet>();
 
         public void AddPet(Pet somePet)
         {
